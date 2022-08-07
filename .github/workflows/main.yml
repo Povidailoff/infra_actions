@@ -22,7 +22,6 @@ jobs:
         cd infra_project/
         python manage.py test
 
-  
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -43,7 +42,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/infra:latest
 
-  
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
